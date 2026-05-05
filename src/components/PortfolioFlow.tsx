@@ -10,6 +10,15 @@ import {
   type Edge,
 } from "@xyflow/react";
 
+const nodeStyle = {
+  background: "rgba(15, 23, 42, 0.92)",
+  color: "#e0f2fe",
+  border: "1px solid rgba(34, 211, 238, 0.65)",
+  borderRadius: 16,
+  padding: 14,
+  boxShadow: "0 0 25px rgba(34, 211, 238, 0.25)",
+};
+
 const nodes: Node[] = [
   {
     id: "core",
@@ -17,51 +26,17 @@ const nodes: Node[] = [
     data: { label: "Yoan Louvois" },
     type: "input",
     style: {
-      background: "#020617",
+      ...nodeStyle,
       color: "#67e8f9",
-      border: "1px solid #22d3ee",
-      borderRadius: 18,
-      padding: 18,
-      boxShadow: "0 0 35px rgba(34,211,238,0.45)",
+      boxShadow: "0 0 40px rgba(34,211,238,0.55)",
     },
   },
-  {
-    id: "devops",
-    position: { x: 40, y: 80 },
-    data: { label: "DevOps" },
-    style: futuristicNode(),
-  },
-  {
-    id: "mlops",
-    position: { x: 520, y: 80 },
-    data: { label: "MLOps" },
-    style: futuristicNode(),
-  },
-  {
-    id: "backend",
-    position: { x: 60, y: 380 },
-    data: { label: "Backend Systems" },
-    style: futuristicNode(),
-  },
-  {
-    id: "cloud",
-    position: { x: 520, y: 380 },
-    data: { label: "Cloud Engineering" },
-    style: futuristicNode(),
-  },
-  {
-    id: "ai",
-    position: { x: 290, y: 20 },
-    data: { label: "Deep Learning" },
-    style: futuristicNode(),
-  },
-  {
-    id: "contact",
-    position: { x: 300, y: 500 },
-    data: { label: "Contact" },
-    type: "output",
-    style: futuristicNode(),
-  },
+  { id: "devops", position: { x: 40, y: 80 }, data: { label: "DevOps" }, style: nodeStyle },
+  { id: "mlops", position: { x: 520, y: 80 }, data: { label: "MLOps" }, style: nodeStyle },
+  { id: "backend", position: { x: 60, y: 380 }, data: { label: "Backend Systems" }, style: nodeStyle },
+  { id: "cloud", position: { x: 520, y: 380 }, data: { label: "Cloud Engineering" }, style: nodeStyle },
+  { id: "ai", position: { x: 290, y: 20 }, data: { label: "Deep Learning" }, style: nodeStyle },
+  { id: "contact", position: { x: 300, y: 500 }, data: { label: "Contact" }, type: "output", style: nodeStyle },
 ];
 
 const edges: Edge[] = [
@@ -73,28 +48,17 @@ const edges: Edge[] = [
   { id: "core-contact", source: "core", target: "contact", animated: true },
 ];
 
-function futuristicNode() {
-  return {
-    background: "rgba(15, 23, 42, 0.9)",
-    color: "#e0f2fe",
-    border: "1px solid rgba(34, 211, 238, 0.55)",
-    borderRadius: 16,
-    padding: 14,
-    boxShadow: "0 0 25px rgba(59, 130, 246, 0.25)",
-  };
-}
-
 export default function PortfolioFlow() {
   return (
-    <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      fitView
-      className="rounded-2xl"
-    >
-      <Background color="#22d3ee" gap={24} />
-      <MiniMap />
-      <Controls />
-    </ReactFlow>
+    <div className="h-full w-full overflow-hidden rounded-2xl bg-slate-950">
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        fitView
+        className="bg-slate-950"
+      >
+        <Background color="#164e63" gap={24} />     
+      </ReactFlow>
+    </div>
   );
 }
