@@ -11,8 +11,10 @@ export default function Home() {
           <span className="font-mono">ePortfolio // 2026</span>
         </nav>
 
-        <div className="grid flex-1 items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <div>
+        <div className="flex flex-col gap-20">
+  
+          {/* HERO SECTION */}
+          <div className="min-h-[70vh] flex flex-col justify-center">
             <p className="mb-4 font-mono text-sm uppercase tracking-[0.4em] text-cyan-300">
               Software Engineer
             </p>
@@ -43,9 +45,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative h-[620px] rounded-3xl border border-cyan-400/30 bg-slate-900/60 p-4 shadow-[0_0_80px_rgba(34,211,238,0.15)] backdrop-blur">
-            <PortfolioFlow />
+          {/* FLOW SECTION */}
+          <div className="w-full">
+            <h2 className="mb-6 text-3xl font-bold text-cyan-300">
+              Skills Architecture
+            </h2>
+
+            <div className="relative h-[900px] w-full rounded-3xl border border-cyan-400/30 bg-slate-900/60 p-4 shadow-[0_0_80px_rgba(34,211,238,0.15)] backdrop-blur">
+              <PortfolioFlow />
+            </div>
           </div>
+
         </div>
       </section>
     </main>
