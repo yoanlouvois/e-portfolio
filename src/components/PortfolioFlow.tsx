@@ -109,9 +109,9 @@ function getLayoutedElements() {
   dagreGraph.setDefaultEdgeLabel(() => ({}));
 
   dagreGraph.setGraph({
-    rankdir: "TB", // Top -> Bottom
-    ranksep: 100,
-    nodesep: 50,
+    rankdir: "TB", // Passe de "TB" à "LR" (Left to Right)
+    ranksep: 60,   // Réduit de 100 à 60
+    nodesep: 20,   // Réduit de 50 à 20
   });
 
   rawNodes.forEach((node) => {
