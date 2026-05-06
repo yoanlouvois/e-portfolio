@@ -1,7 +1,7 @@
 "use client";
 
 import "@xyflow/react/dist/style.css";
-import ReactFlow, { Background } from "@xyflow/react";
+import { ReactFlow, Background } from "@xyflow/react";
 import dagre from "dagre";
 
 const nodeWidth = 180;
@@ -9,21 +9,98 @@ const nodeHeight = 60;
 
 const rawNodes = [
   { id: "me", label: "Yoan Louvois" },
-  { id: "languages", label: "Languages" },
+
+  // DevOps / MLOps d'abord
   { id: "devops", label: "DevOps / MLOps" },
-  { id: "python", label: "Python" },
-  { id: "java", label: "Java" },
-  { id: "aws", label: "AWS" },
+  { id: "cicd", label: "CI/CD" },
+  { id: "github-actions", label: "GitHub Actions" },
+  { id: "container", label: "Container" },
   { id: "docker", label: "Docker" },
+  { id: "iac", label: "IaC" },
+  { id: "terraform", label: "Terraform" },
+  { id: "cloud", label: "Cloud" },
+  { id: "aws", label: "AWS" },
+  { id: "ec2-s3", label: "EC2 / S3" },
+  { id: "sagemaker", label: "SageMaker\nAI pipelines" },
+  { id: "cloudwatch", label: "CloudWatch" },
+  { id: "lambda-api", label: "Lambda / API Gateway" },
+  { id: "ecr", label: "ECR" },
+
+  // Langages ensuite
+  { id: "languages", label: "Langages" },
+  { id: "cpp", label: "C++" },
+  { id: "qt", label: "Qt" },
+  { id: "multithreading", label: "Multi-threading" },
+
+  { id: "java", label: "Java" },
+  { id: "javafx-swing", label: "JavaFX / Swing" },
+  { id: "springboot", label: "Spring Boot" },
+
+  { id: "javascript", label: "JavaScript" },
+  { id: "express", label: "Express" },
+  { id: "node", label: "Node.js" },
+
+  { id: "typescript", label: "TypeScript" },
+  { id: "angular", label: "Angular" },
+
+  { id: "python", label: "Python" },
+  { id: "numpy-pandas", label: "NumPy / Pandas" },
+  { id: "sklearn", label: "Scikit-learn" },
+  { id: "pytorch", label: "PyTorch" },
+  { id: "fastapi", label: "FastAPI" },
+
+  { id: "database", label: "Database" },
+  { id: "postgresql", label: "PostgreSQL" },
+  { id: "mysql", label: "MySQL" },
 ];
 
 const rawEdges = [
-  ["me", "languages"],
   ["me", "devops"],
-  ["languages", "python"],
+  ["me", "languages"],
+
+  // DevOps / MLOps
+  ["devops", "cicd"],
+  ["cicd", "github-actions"],
+
+  ["devops", "container"],
+  ["container", "docker"],
+
+  ["devops", "iac"],
+  ["iac", "terraform"],
+
+  ["devops", "cloud"],
+  ["cloud", "aws"],
+  ["aws", "ec2-s3"],
+  ["aws", "sagemaker"],
+  ["aws", "cloudwatch"],
+  ["aws", "lambda-api"],
+  ["aws", "ecr"],
+
+  // Langages
+  ["languages", "cpp"],
+  ["cpp", "qt"],
+  ["cpp", "multithreading"],
+
   ["languages", "java"],
-  ["devops", "aws"],
-  ["devops", "docker"],
+  ["java", "javafx-swing"],
+  ["java", "springboot"],
+
+  ["languages", "javascript"],
+  ["javascript", "express"],
+  ["javascript", "node"],
+
+  ["languages", "typescript"],
+  ["typescript", "angular"],
+
+  ["languages", "python"],
+  ["python", "numpy-pandas"],
+  ["python", "sklearn"],
+  ["python", "pytorch"],
+  ["python", "fastapi"],
+
+  ["languages", "database"],
+  ["database", "postgresql"],
+  ["database", "mysql"],
 ];
 
 function getLayoutedElements() {
@@ -83,9 +160,21 @@ function getLayoutedElements() {
 export default function PortfolioFlow() {
   const { nodes, edges } = getLayoutedElements();
 
-  return (
-    <div className="h-full w-full bg-slate-950 rounded-2xl">
-      <ReactFlow nodes={nodes} edges={edges} fitView>
+  return(
+    <div className="h-full w-full rounded-2xl bg-slate-950">
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        fitView
+        fitViewOptions={{
+          padding: 0.4,
+          minZoom: 0.3,
+          maxZoom: 0.8,
+        }}
+        minZoom={0.2}
+        maxZoom={1.5}
+        defaultViewport={{ x: 0, y: 0, zoom: 0.45 }}
+      >
         <Background color="#164e63" gap={24} />
       </ReactFlow>
     </div>

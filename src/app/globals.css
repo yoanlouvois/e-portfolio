@@ -24,3 +24,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Ajoute le parent pour augmenter la priorité */
+.react-flow .react-flow__attribution {
+  background: #0f172a !important;
+  color: #67e8f9 !important;
+  border: 1px solid rgba(34, 211, 238, 0.3) !important;
+  border-radius: 6px !important; /* Un peu moins pour que ça reste discret */
+  padding: 4px 8px !important;
+  font-size: 10px !important;
+}
+
+.react-flow .react-flow__attribution a {
+  color: #67e8f9 !important;
+  text-decoration: none;
+}
