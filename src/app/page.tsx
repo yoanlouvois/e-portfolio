@@ -87,10 +87,95 @@ export default function Home() {
 
           <ProjectsSection />
 
-          {/* NEXT SECTIONS PLACEHOLDER */}
-          <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-slate-400">
-            More sections coming soon: projects, experience, education, and
-            contact.
+          {/* EXPERIENCE */}
+          <section>
+            <div className="mb-8">
+              <p className="mb-2 font-mono text-xs uppercase tracking-[0.4em] text-cyan-400">
+                Experience
+              </p>
+
+              <h2 className="text-4xl font-bold tracking-tight">
+                Professional Experience
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              <article className="rounded-3xl border border-white/10 bg-slate-900/40 p-8 backdrop-blur-md">
+                <div className="mb-4 flex flex-col justify-between gap-2 md:flex-row">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-100">
+                      Software Engineering Intern — Thales DMS
+                    </h3>
+                    <p className="text-cyan-300">Backend Development & LLM Integration</p>
+                  </div>
+
+                  <span className="font-mono text-sm text-slate-500">
+                    Jan 2026 — Jul 2026
+                  </span>
+                </div>
+
+                <p className="text-slate-400">
+                  Designing a backend API and integrating an LLM to automate simulator interactions.
+                </p>
+              </article>
+
+              <article className="rounded-3xl border border-white/10 bg-slate-900/40 p-8 backdrop-blur-md">
+                <div className="mb-4 flex flex-col justify-between gap-2 md:flex-row">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-100">
+                      Software Development Intern — Thales DMS
+                    </h3>
+                    <p className="text-cyan-300">C++ / Qt Software Development</p>
+                  </div>
+
+                  <span className="font-mono text-sm text-slate-500">
+                    Apr 2025 — Aug 2025
+                  </span>
+                </div>
+
+                <p className="text-slate-400">
+                  Development of an intrapulse signal editing software using C++/Qt.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          {/* CONTACT */}
+          <section className="rounded-3xl border border-cyan-400/20 bg-cyan-400/5 p-8 backdrop-blur-md">
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.4em] text-cyan-400">
+              Contact
+            </p>
+
+            <h2 className="mb-6 text-4xl font-bold tracking-tight">
+              Let’s connect
+            </h2>
+
+            <div className="flex flex-col gap-4 text-slate-300">
+              <a
+                href="mailto:yoan.louvois@gmail.com"
+                className="transition hover:text-cyan-300"
+              >
+                📧 yoan.louvois@gmail.com
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/yoan-louvois-a74620238"
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-cyan-300"
+              >
+                💼 LinkedIn
+              </a>
+
+              <a
+                href="https://github.com/yoanlouvois"
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-cyan-300"
+              >
+                🧑‍💻 GitHub
+              </a>
+            </div>
           </section>
         </div>
       </section>
