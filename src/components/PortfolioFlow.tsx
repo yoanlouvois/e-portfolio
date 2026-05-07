@@ -138,10 +138,10 @@ export default function PortfolioFlow() {
         fitView
         fitViewOptions={{
           padding: 0.4,
-          minZoom: 0.5,
+          minZoom: 0.54,
           maxZoom: 0.9,
         }}
-        minZoom={0.5}
+        minZoom={0.54}
         maxZoom={1.5}
         defaultViewport={{ x: 0, y: 0, zoom: 0.45 }}
       >
