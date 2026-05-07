@@ -1,3 +1,5 @@
+const basePath = process.env.NODE_ENV === "production" ? "/e-portfolio" : "";
+
 const projects = [
   {
     title: "Urban-Green-Score-MLops",
@@ -57,7 +59,7 @@ export default function ProjectsSection() {
           >
             <div className="h-48 bg-slate-900">
               <img
-                src={project.image}
+                src={`${basePath}${project.image}`}
                 alt={project.title}
                 className="h-full w-full object-cover opacity-80 transition group-hover:opacity-100"
               />
