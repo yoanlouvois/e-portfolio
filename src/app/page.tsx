@@ -10,13 +10,6 @@ export default function Home() {
       </div>
 
       <section className="relative z-10 mx-auto max-w-6xl px-6 py-10">
-        <nav className="mb-20 flex items-center justify-between text-sm text-slate-400">
-          <span className="font-mono tracking-widest text-cyan-500/80">
-            YOAN.LOUVOIS
-          </span>
-          <span className="font-mono opacity-50">ePortfolio // 2026</span>
-        </nav>
-
         <div className="flex flex-col gap-28 pb-24">
           {/* PRESENTATION */}
           <section className="flex min-h-[75vh] flex-col justify-center">
@@ -71,7 +64,7 @@ export default function Home() {
                 </p>
 
                 <h2 className="text-4xl font-bold tracking-tight">
-                  Skills Architecture
+                  My Skills
                 </h2>
               </div>
 

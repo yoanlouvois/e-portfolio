@@ -16,18 +16,18 @@ const projects = [
       "Comparison of feature extraction methods and clustering algorithms applied to fruit images, with interactive visualization using Streamlit.",
   },
   {
-    title: "3D-Maze-Environment-OpenGL",
-    image: "/projects/maze-opengl.png",
-    github: "https://github.com/yoanlouvois/3D-Maze-Environment-OpenGL",
-    description:
-      "Randomly generated 3D maze where users can navigate in real time, focusing on rendering, procedural generation, and interactive movement.",
-  },
-  {
     title: "Travel-Tracker-App",
     image: "/projects/travel-tracker.png",
     github: "https://github.com/yoanlouvois/Travel-Tracker-App",
     description:
       "Web application built with Node.js, Express, Prisma, and Leaflet to log, visualize, and organize personal travels on an interactive map.",
+  },
+  {
+    title: "3D-Maze-Environment-OpenGL",
+    image: "/projects/maze-opengl.png",
+    github: "https://github.com/yoanlouvois/3D-Maze-Environment-OpenGL",
+    description:
+      "Randomly generated 3D maze where users can navigate in real time, focusing on rendering, procedural generation, and interactive movement.",
   },
   {
     title: "GameTracker",
