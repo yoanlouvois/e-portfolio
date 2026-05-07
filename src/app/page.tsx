@@ -1,4 +1,5 @@
 import PortfolioFlow from "@/components/PortfolioFlow";
+import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Home() {
   return (
@@ -83,6 +84,8 @@ export default function Home() {
               <PortfolioFlow />
             </div>
           </section>
+
+          <ProjectsSection />
 
           {/* NEXT SECTIONS PLACEHOLDER */}
           <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-slate-400">
