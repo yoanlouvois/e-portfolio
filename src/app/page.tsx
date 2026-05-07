@@ -1,5 +1,4 @@
-import DevOpsFlow from "@/components/DevOpsFlow";
-import LanguagesFlow from "@/components/LanguagesFlow";
+import PortfolioFlow from "@/components/PortfolioFlow";
 
 export default function Home() {
   return (
@@ -57,37 +56,23 @@ export default function Home() {
             </div>
           </div>
 
-          {/* FLOW SECTIONS */}
-          <section className="space-y-32 pb-24">
-            
-            {/* DEVOPS */}
+          {/* SKILLS GRAPH */}
+          <section className="pb-24">
             <div className="group">
               <div className="mb-8 flex items-end justify-between">
                 <h2 className="text-4xl font-bold tracking-tight">
-                  <span className="text-cyan-500">01.</span> DevOps / MLOps
+                  <span className="text-cyan-500">01.</span> Skills Architecture
                 </h2>
-                <span className="hidden font-mono text-xs text-slate-500 md:block">INTERACTIVE GRAPH // DRAG TO EXPLORE</span>
+
+                <span className="hidden font-mono text-xs text-slate-500 md:block">
+                  INTERACTIVE GRAPH // DRAG TO EXPLORE
+                </span>
               </div>
 
-              <div className="h-[700px] overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 backdrop-blur-md transition-all group-hover:border-cyan-500/30">
-                <DevOpsFlow />
+              <div className="h-[950px] overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 backdrop-blur-md transition-all group-hover:border-cyan-500/30">
+                <PortfolioFlow />
               </div>
             </div>
-
-            {/* LANGUAGES */}
-            <div className="group">
-              <div className="mb-8 flex items-end justify-between">
-                <h2 className="text-4xl font-bold tracking-tight">
-                  <span className="text-purple-500">02.</span> Langages & Frameworks
-                </h2>
-                <span className="hidden font-mono text-xs text-slate-500 md:block">INTERACTIVE GRAPH // DRAG TO EXPLORE</span>
-              </div>
-
-              <div className="h-[850px] overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 backdrop-blur-md transition-all group-hover:border-purple-500/30">
-                <LanguagesFlow />
-              </div>
-            </div>
-
           </section>
         </div>
       </section>

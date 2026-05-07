@@ -10,7 +10,6 @@ const nodeHeight = 60;
 const rawNodes = [
   { id: "me", label: "Yoan Louvois" },
 
-  // DevOps / MLOps d'abord
   { id: "devops", label: "DevOps / MLOps" },
   { id: "cicd", label: "CI/CD" },
   { id: "github-actions", label: "GitHub Actions" },
@@ -20,34 +19,20 @@ const rawNodes = [
   { id: "terraform", label: "Terraform" },
   { id: "cloud", label: "Cloud" },
   { id: "aws", label: "AWS" },
-  { id: "ec2-s3", label: "EC2 / S3" },
-  { id: "sagemaker", label: "SageMaker\nAI pipelines" },
-  { id: "cloudwatch", label: "CloudWatch" },
-  { id: "lambda-api", label: "Lambda / API Gateway" },
-  { id: "ecr", label: "ECR" },
+  {
+    id: "aws-services",
+    label: "EC2 / S3\nSageMaker AI pipelines\nCloudWatch\nLambda / API Gateway\nECR",
+  },
 
-  // Langages ensuite
   { id: "languages", label: "Langages" },
-  { id: "cpp", label: "C++" },
-  { id: "qt", label: "Qt" },
-  { id: "multithreading", label: "Multi-threading" },
+  { id: "poo", label: "POO" },
+  { id: "cpp", label: "C++\nQt • Multi-threading" },
+  { id: "java", label: "Java\nJavaFX • Swing • Spring Boot" },
 
-  { id: "java", label: "Java" },
-  { id: "javafx-swing", label: "JavaFX / Swing" },
-  { id: "springboot", label: "Spring Boot" },
-
-  { id: "javascript", label: "JavaScript" },
-  { id: "express", label: "Express" },
-  { id: "node", label: "Node.js" },
-
-  { id: "typescript", label: "TypeScript" },
-  { id: "angular", label: "Angular" },
-
-  { id: "python", label: "Python" },
-  { id: "numpy-pandas", label: "NumPy / Pandas" },
-  { id: "sklearn", label: "Scikit-learn" },
-  { id: "pytorch", label: "PyTorch" },
-  { id: "fastapi", label: "FastAPI" },
+  { id: "scripting", label: "Scripting" },
+  { id: "javascript", label: "JavaScript\nExpress • Node.js" },
+  { id: "typescript", label: "TypeScript\nAngular" },
+  { id: "python", label: "Python\nPandas • Scikit-learn • PyTorch • FastAPI" },
 
   { id: "database", label: "Database" },
   { id: "postgresql", label: "PostgreSQL" },
@@ -57,8 +42,8 @@ const rawNodes = [
 const rawEdges = [
   ["me", "devops"],
   ["me", "languages"],
+  ["me", "database"],
 
-  // DevOps / MLOps
   ["devops", "cicd"],
   ["cicd", "github-actions"],
 
@@ -70,35 +55,17 @@ const rawEdges = [
 
   ["devops", "cloud"],
   ["cloud", "aws"],
-  ["aws", "ec2-s3"],
-  ["aws", "sagemaker"],
-  ["aws", "cloudwatch"],
-  ["aws", "lambda-api"],
-  ["aws", "ecr"],
+  ["aws", "aws-services"],
 
-  // Langages
-  ["languages", "cpp"],
-  ["cpp", "qt"],
-  ["cpp", "multithreading"],
+  ["languages", "poo"],
+  ["poo", "cpp"],
+  ["poo", "java"],
 
-  ["languages", "java"],
-  ["java", "javafx-swing"],
-  ["java", "springboot"],
+  ["languages", "scripting"],
+  ["scripting", "javascript"],
+  ["scripting", "typescript"],
+  ["scripting", "python"],
 
-  ["languages", "javascript"],
-  ["javascript", "express"],
-  ["javascript", "node"],
-
-  ["languages", "typescript"],
-  ["typescript", "angular"],
-
-  ["languages", "python"],
-  ["python", "numpy-pandas"],
-  ["python", "sklearn"],
-  ["python", "pytorch"],
-  ["python", "fastapi"],
-
-  ["languages", "database"],
   ["database", "postgresql"],
   ["database", "mysql"],
 ];
@@ -143,6 +110,9 @@ function getLayoutedElements() {
         border: "1px solid #22d3ee",
         borderRadius: 12,
         padding: 10,
+        whiteSpace: "pre-line",
+        width: nodeWidth,
+        minHeight: nodeHeight,
       },
     };
   });
