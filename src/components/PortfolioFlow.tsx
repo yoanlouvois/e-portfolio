@@ -141,7 +141,7 @@ export default function PortfolioFlow() {
           minZoom: 0.54,
           maxZoom: 0.9,
         }}
-        minZoom={0.54}
+        minZoom={0.2}
         maxZoom={1.5}
         defaultViewport={{ x: 0, y: 0, zoom: 0.45 }}
       >

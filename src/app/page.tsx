@@ -79,7 +79,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="h-[650px] overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 p-3 backdrop-blur-md transition-all hover:border-cyan-500/30">
+            <div className="h-[420px] overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 p-3 backdrop-blur-md transition-all hover:border-cyan-500/30">
               <PortfolioFlow />
             </div>
           </section>
