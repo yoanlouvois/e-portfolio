@@ -10,7 +10,7 @@ export default function Home() {
       </div>
 
       <section className="relative z-10 mx-auto max-w-6xl px-6 py-10">
-        <div className="flex flex-col gap-16 pb-24">
+        <section className="flex min-h-[75vh] flex-col justify-center">
           {/* PRESENTATION */}
           <section className="pt-20 pb-8">
             <p className="mb-4 font-mono text-xs uppercase tracking-[0.5em] text-cyan-400">
