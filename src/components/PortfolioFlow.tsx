@@ -19,10 +19,6 @@ const rawNodes = [
   { id: "terraform", label: "Terraform" },
   { id: "cloud", label: "Cloud" },
   { id: "aws", label: "AWS" },
-  {
-    id: "aws-services",
-    label: "EC2 / S3\nSageMaker AI pipelines\nCloudWatch\nLambda / API Gateway\nECR",
-  },
 
   { id: "languages", label: "Langages" },
   { id: "poo", label: "POO" },
@@ -55,7 +51,6 @@ const rawEdges = [
 
   ["devops", "cloud"],
   ["cloud", "aws"],
-  ["aws", "aws-services"],
 
   ["languages", "poo"],
   ["poo", "cpp"],
@@ -149,7 +144,6 @@ function getNodeStyle(nodeId: string) {
       "terraform",
       "cloud",
       "aws",
-      "aws-services",
     ].includes(nodeId)
   ) {
     return {
