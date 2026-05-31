@@ -104,16 +104,7 @@ function getLayoutedElements() {
         x: pos.x - nodeWidth / 2,
         y: pos.y - nodeHeight / 2,
       },
-      style: {
-        background: "#0f172a",
-        color: "#67e8f9",
-        border: "1px solid #22d3ee",
-        borderRadius: 12,
-        padding: 10,
-        whiteSpace: "pre-line",
-        width: nodeWidth,
-        minHeight: nodeHeight,
-      },
+      style: getNodeStyle(node.id),
     };
   });
 
@@ -125,6 +116,85 @@ function getLayoutedElements() {
   }));
 
   return { nodes, edges };
+}
+
+function getNodeStyle(nodeId: string) {
+  const baseStyle = {
+    borderRadius: 12,
+    padding: 10,
+    whiteSpace: "pre-line",
+    width: nodeWidth,
+    minHeight: nodeHeight,
+  };
+
+  if (nodeId === "me") {
+    return {
+      ...baseStyle,
+      background: "#082f49",
+      color: "#67e8f9",
+      border: "2px solid #22d3ee",
+      boxShadow: "0 0 24px rgba(34, 211, 238, 0.45)",
+      fontWeight: 700,
+    };
+  }
+
+  if (
+    [
+      "devops",
+      "cicd",
+      "github-actions",
+      "container",
+      "docker",
+      "iac",
+      "terraform",
+      "cloud",
+      "aws",
+      "aws-services",
+    ].includes(nodeId)
+  ) {
+    return {
+      ...baseStyle,
+      background: "#172554",
+      color: "#bfdbfe",
+      border: "1px solid #3b82f6",
+    };
+  }
+
+  if (
+    [
+      "languages",
+      "poo",
+      "cpp",
+      "java",
+      "scripting",
+      "javascript",
+      "typescript",
+      "python",
+    ].includes(nodeId)
+  ) {
+    return {
+      ...baseStyle,
+      background: "#3b0764",
+      color: "#e9d5ff",
+      border: "1px solid #a855f7",
+    };
+  }
+
+  if (["database", "postgresql", "mysql"].includes(nodeId)) {
+    return {
+      ...baseStyle,
+      background: "#052e16",
+      color: "#bbf7d0",
+      border: "1px solid #22c55e",
+    };
+  }
+
+  return {
+    ...baseStyle,
+    background: "#0f172a",
+    color: "#e2e8f0",
+    border: "1px solid #475569",
+  };
 }
 
 export default function PortfolioFlow() {
