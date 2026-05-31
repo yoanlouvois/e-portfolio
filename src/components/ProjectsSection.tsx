@@ -6,7 +6,7 @@ const projects = [
     image: "/projects/urban-green-score.png",
     github: "https://github.com/yoanlouvois/Urban-Green-Score-MLops",
     description:
-      "End-to-end MLOps pipeline for satellite image segmentation and Urban Green Score computation using PyTorch, Docker, and AWS SageMaker.",
+      "End-to-end MLOps pipeline for satellite image segmentation and Urban Green Score computation using PyTorch, Docker, AWS and Terraform.",
   },
   {
     title: "Unsupervised-ML-Fruits-Classification",
@@ -34,8 +34,15 @@ const projects = [
     image: "/projects/gametracker.png",
     github: "https://github.com/MorganPhlp/GameTrackerProject",
     description:
-      "Online flash game tracking platform with player management, trophies, friends, and statistics. Built with Spring Boot, Docker, MySQL, and Angular.",
+      "Full-stack web application for an online gaming platform featuring player management, trophies, friends, and statistics. Built with Spring Boot, Docker, MySQL, and Angular.",
   },
+  {
+    title: "CMDominion",
+    image: "/projects/cmdominion.png",
+    github: "https://github.com/yoanlouvois/CMDominion",
+    description:
+      "CMD-based Dominion game built with C++. Supports local multiplayer (2-4 players), full deck-building mechanics, and includes a Makefile for seamless building.",
+  }
 ];
 
 export default function ProjectsSection() {
