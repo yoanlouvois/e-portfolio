@@ -108,7 +108,7 @@ export default function Home() {
                 </div>
 
                 <p className="text-slate-400">
-                  Conception d'une API et intégration d'une solution LLM locale et distante afin d'automatiser les interactions avec un simulateur.
+                  Conception d'une plateforme d'interaction IA pour simulateur : développement d'API, intégration de LLM locaux et distants, gestion de sessions conversationnelles et génération automatisée de scénarios.
                 </p>
               </article>
 
