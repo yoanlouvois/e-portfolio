@@ -18,7 +18,7 @@ const rawNodes = [
   { id: "iac", label: "Infrastructure as Code" },
   { id: "terraform", label: "Terraform" },
   { id: "cloud", label: "Cloud" },
-  { id: "aws", label: "AWS" },
+  { id: "aws", label: "AWS\nEC2 • S3 • Lambda • VPC" },
 
   { id: "languages", label: "Langages" },
   { id: "poo", label: "Programmation Orientée Objet" },
