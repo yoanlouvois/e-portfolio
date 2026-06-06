@@ -6,42 +6,42 @@ const projects = [
     image: "/projects/urban-green-score.png",
     github: "https://github.com/yoanlouvois/Urban-Green-Score-MLops",
     description:
-      "End-to-end MLOps pipeline for satellite image segmentation and Urban Green Score computation using PyTorch, Docker, AWS and Terraform.",
+      "Conception d'une infrastructure MLOps de bout en bout via Terraform sur AWS. Déploiement serverless (API Gateway & Lambda) et conteneurisé (Docker/ECR) d'un modèle SageMaker de segmentation d'images satellites.",
   },
   {
     title: "Unsupervised-ML-Fruits-Classification",
     image: "/projects/fruits-classification.png",
     github: "https://github.com/yoanlouvois/Unsupervised-ML-Fruits-Classification",
     description:
-      "Comparison of feature extraction methods and clustering algorithms applied to fruit images, with interactive visualization using Streamlit.",
+      "Comparaison de méthodes d'extraction de caractéristiques et d'algorithmes de clustering appliqués à des images de fruits, avec une interface de visualisation interactive sous Streamlit.",
   },
   {
     title: "Travel-Tracker-App",
     image: "/projects/travel-tracker.png",
     github: "https://github.com/yoanlouvois/Travel-Tracker-App",
     description:
-      "Web application built with Node.js, Express, Prisma, and Leaflet to log, visualize, and organize personal travels on an interactive map.",
+      "Application web développée avec Node.js, Express, Prisma et Leaflet permettant de consigner, d'organiser et de visualiser ses voyages personnels sur une carte interactive.",
   },
   {
     title: "3D-Maze-Environment-OpenGL",
     image: "/projects/maze-opengl.png",
     github: "https://github.com/yoanlouvois/3D-Maze-Environment-OpenGL",
     description:
-      "Randomly generated 3D maze where users can navigate in real time, focusing on rendering, procedural generation, and interactive movement.",
+      "Labyrinthe 3D généré de manière procédurale dans lequel l'utilisateur peut naviguer en temps réel. Focus sur le rendu graphique, la génération et la gestion des déplacements.",
   },
   {
     title: "GameTracker",
     image: "/projects/gametracker.png",
-    github: "https://github.com/MorganPhlp/GameTrackerProject",
+    github: "https://github.com/yoanlouvois/GameTrackerProject-Backend",
     description:
-      "Full-stack web application for an online gaming platform featuring player management, trophies, friends, and statistics. Built with Spring Boot, Docker, MySQL, and Angular.",
+      "Application web full-stack dédiée à une plateforme de gaming (gestion des joueurs, trophées, amis et statistiques), conçue avec Spring Boot, Docker, MySQL et Angular.",
   },
   {
     title: "CMDominion",
     image: "/projects/cmdominion.png",
     github: "https://github.com/yoanlouvois/CMDominion",
     description:
-      "CMD-based Dominion game built with C++. Supports local multiplayer (2-4 players), full deck-building mechanics, and includes a Makefile for seamless building.",
+      "Jeu de société Dominion jouable en ligne de commande (CLI) développé en C++. Supporte le multijoueur local (2 à 4 joueurs), intègre les mécaniques complètes de deck-building et inclut un Makefile.",
   }
 ];
 
@@ -50,11 +50,11 @@ export default function ProjectsSection() {
     <section>
       <div className="mb-8">
         <p className="mb-2 font-mono text-xs uppercase tracking-[0.4em] text-cyan-400">
-          Projects
+          Projets
         </p>
 
         <h2 className="text-4xl font-bold tracking-tight">
-          Selected Projects
+          Projets Sélectionnés
         </h2>
       </div>
 
@@ -87,7 +87,7 @@ export default function ProjectsSection() {
                 rel="noreferrer"
                 className="inline-flex rounded-full border border-cyan-400/30 px-4 py-2 text-sm font-medium text-cyan-300 transition hover:bg-cyan-400/10"
               >
-                View on GitHub →
+                Voir sur GitHub →
               </a>
             </div>
           </article>
