@@ -14,7 +14,7 @@ export default function Home() {
           {/* PRESENTATION */}
           <section className="flex min-h-[75vh] flex-col justify-center">
             <p className="mb-4 font-mono text-xs uppercase tracking-[0.5em] text-cyan-400">
-              Software Engineer
+              Ingénieur Logiciel
             </p>
 
             <h1 className="mb-6 text-6xl font-black leading-tight tracking-tight md:text-8xl">
@@ -22,18 +22,18 @@ export default function Home() {
             </h1>
 
             <p className="mb-8 max-w-3xl text-2xl font-medium text-slate-200">
-              Software Engineering Intern at{" "}
+              Stagiaire Ingénieur Logiciel chez{" "}
               <span className="text-cyan-300">Thales DMS</span> & Engineering
-              Student at{" "}
+              Etudiant à{" "}
               <span className="text-cyan-300">Polytech Paris-Saclay</span>.
             </p>
 
             <p className="max-w-3xl text-lg leading-relaxed text-slate-400">
-              I am a software engineering student focused on backend
-              development, cloud infrastructure, and production-ready systems.
-              I am particularly interested in DevOps and MLOps: building cloud
-              solutions on AWS, automating workflows, and designing reliable
-              machine learning pipelines.
+              Je suis un étudiant ingénieur en informatique axé sur le développement 
+              backend, les infrastructures cloud et les systèmes prêts pour la production. 
+              Je m'intéresse particulièrement au DevOps et au MLOps : conception de solutions 
+              cloud sur AWS, automatisation de workflows et développement de pipelines de 
+              machine learning fiables.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
@@ -60,16 +60,16 @@ export default function Home() {
             <div className="mb-8 flex items-end justify-between">
               <div>
                 <p className="mb-2 font-mono text-xs uppercase tracking-[0.4em] text-cyan-400">
-                  Skills
+                  Compétences
                 </p>
 
                 <h2 className="text-4xl font-bold tracking-tight">
-                  My Skills
+                  Mes Compétences
                 </h2>
               </div>
 
               <span className="hidden font-mono text-xs text-slate-500 md:block">
-                INTERACTIVE GRAPH // DRAG TO EXPLORE
+                GRAPHE INTERACTIF // ZOOMER et EXPLORER
               </span>
             </div>
 
@@ -84,11 +84,11 @@ export default function Home() {
           <section>
             <div className="mb-8">
               <p className="mb-2 font-mono text-xs uppercase tracking-[0.4em] text-cyan-400">
-                Experience
+                Parcours
               </p>
 
               <h2 className="text-4xl font-bold tracking-tight">
-                Professional Experience
+                Expérience Professionnelle
               </h2>
             </div>
 
@@ -97,18 +97,18 @@ export default function Home() {
                 <div className="mb-4 flex flex-col justify-between gap-2 md:flex-row">
                   <div>
                     <h3 className="text-2xl font-bold text-slate-100">
-                      Software Engineering Intern — Thales DMS
+                      Stagiaire Ingénieur Logiciel — Thales DMS
                     </h3>
-                    <p className="text-cyan-300">Backend Development & LLM Integration</p>
+                    <p className="text-cyan-300">Développement Web & Intégration LLM</p>
                   </div>
 
                   <span className="font-mono text-sm text-slate-500">
-                    Jan 2026 — Jul 2026
+                    Janv 2026 — Juil 2026
                   </span>
                 </div>
 
                 <p className="text-slate-400">
-                  Designing a backend API and integrating an LLM to automate simulator interactions.
+                  Conception d'une API et intégration d'une solution LLM locale et distante afin d'automatiser les interactions avec un simulateur.
                 </p>
               </article>
 
@@ -116,18 +116,18 @@ export default function Home() {
                 <div className="mb-4 flex flex-col justify-between gap-2 md:flex-row">
                   <div>
                     <h3 className="text-2xl font-bold text-slate-100">
-                      Software Development Intern — Thales DMS
+                      Stagiaire en Développement Logiciel — Thales DMS
                     </h3>
-                    <p className="text-cyan-300">C++ / Qt Software Development</p>
+                    <p className="text-cyan-300">Développement Logiciel C++ / Qt</p>
                   </div>
 
                   <span className="font-mono text-sm text-slate-500">
-                    Apr 2025 — Aug 2025
+                    Avr 2025 — Août 2025
                   </span>
                 </div>
 
                 <p className="text-slate-400">
-                  Development of an intrapulse signal editing software using C++/Qt.
+                  Développement d'un logiciel d'édition de signaux intrapulsionnels en C++/Qt.
                 </p>
               </article>
             </div>
@@ -140,7 +140,7 @@ export default function Home() {
             </p>
 
             <h2 className="mb-6 text-4xl font-bold tracking-tight">
-              Let’s connect
+              Me contacter
             </h2>
 
             <div className="flex flex-col gap-4 text-slate-300">
