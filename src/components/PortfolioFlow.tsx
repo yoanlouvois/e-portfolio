@@ -13,15 +13,15 @@ const rawNodes = [
   { id: "devops", label: "DevOps / MLOps" },
   { id: "cicd", label: "CI/CD" },
   { id: "github-actions", label: "GitHub Actions" },
-  { id: "container", label: "Container" },
+  { id: "container", label: "Conteneurisation" },
   { id: "docker", label: "Docker" },
-  { id: "iac", label: "IaC" },
+  { id: "iac", label: "Infrastructure as Code" },
   { id: "terraform", label: "Terraform" },
   { id: "cloud", label: "Cloud" },
   { id: "aws", label: "AWS" },
 
   { id: "languages", label: "Langages" },
-  { id: "poo", label: "POO" },
+  { id: "poo", label: "Programmation Orientée Objet" },
   { id: "cpp", label: "C++\nQt • Multi-threading" },
   { id: "java", label: "Java\nJavaFX • Swing • Spring Boot" },
 
