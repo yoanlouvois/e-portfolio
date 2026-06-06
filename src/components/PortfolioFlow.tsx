@@ -177,9 +177,9 @@ function getNodeStyle(nodeId: string) {
   if (["database", "postgresql", "mysql"].includes(nodeId)) {
     return {
       ...baseStyle,
-      background: "#052e16",
-      color: "#bbf7d0",
-      border: "1px solid #22c55e",
+      background: "#172554",
+      color: "#bfdbfe",
+      border: "1px solid #3b82f6",
     };
   }
 
