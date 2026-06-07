@@ -108,7 +108,7 @@ export default function Home() {
                 </div>
 
                 <p className="text-slate-400">
-                  Conception d'une plateforme d'interaction IA pour simulateur : développement d'API, intégration de LLM locaux et distants, gestion de sessions conversationnelles et génération automatisée de scénarios.
+                  Conception d'une interface d'interaction IA pour simulateur : développement d'API, intégration de LLM locaux et distants, gestion de sessions conversationnelles et génération automatisée de scénarios.
                 </p>
               </article>
 
@@ -127,7 +127,7 @@ export default function Home() {
                 </div>
 
                 <p className="text-slate-400">
-                  Développement d'un logiciel d'édition de signaux intrapulsionnels en C++/Qt.
+                  Développement d'un logiciel d'édition de signaux intrapulsionnels en C++/Qt destiné à être intégré dans un simulateur d'environnement éléctromagnétique.
                 </p>
               </article>
             </div>

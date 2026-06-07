@@ -11,9 +11,9 @@ const projects = [
   },
   {
     title: "Unsupervised-ML-Fruits-Classification",
-    image: "/projects/fruits-classification.png",
+    image: "/projects/fruitsml-classification.png",
     github: "https://github.com/yoanlouvois/Unsupervised-ML-Fruits-Classification",
-    tags: ["Python", "Scikit-learn", "Streamlit", "Computer Vision"],
+    tags: ["Python", "Scikit-learn", "Streamlit", "Computer Vision", "Resnet50"],
     description:
       "Comparaison de méthodes d'extraction de caractéristiques et d'algorithmes de clustering appliqués à des images de fruits, avec une interface de visualisation interactive sous Streamlit.",
   },
@@ -21,7 +21,7 @@ const projects = [
     title: "GameTracker",
     image: "/projects/gametracker.png",
     github: "https://github.com/yoanlouvois/GameTrackerProject-Backend",
-    tags: ["Java", "Spring Boot", "Angular", "Docker", "MySQL"],
+    tags: ["Java", "Spring Boot", "TypeScript", "Angular", "Docker", "MySQL"],
     description:
       "Application web full-stack dédiée à une plateforme de gaming (gestion des joueurs, trophées, amis et statistiques), conçue avec Spring Boot, Docker, MySQL et Angular.",
   },
@@ -29,7 +29,7 @@ const projects = [
     title: "Travel-Tracker-App",
     image: "/projects/travel-tracker.png",
     github: "https://github.com/yoanlouvois/Travel-Tracker-App",
-    tags: ["Node.js", "Express", "Prisma", "Leaflet"],
+    tags: ["Javascript","Node.js", "Express", "Prisma", "Leaflet"],
     description:
       "Application web développée avec Node.js, Express, Prisma et Leaflet permettant de consigner, d'organiser et de visualiser ses voyages personnels sur une carte interactive.",
   },
