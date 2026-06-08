@@ -18,17 +18,19 @@ const rawNodes = [
   { id: "iac", label: "Infrastructure as Code" },
   { id: "terraform", label: "Terraform" },
   { id: "cloud", label: "Cloud" },
-  { id: "aws", label: "AWS\nEC2 • S3 • Lambda • VPC" },
+  { id: "aws", label: "AWS\nEC2 • S3 • Lambda • VPC • Sagemaker AI" },
 
   { id: "languages", label: "Langages" },
   { id: "poo", label: "Programmation Orientée Objet" },
   { id: "cpp", label: "C++\nQt • Multi-threading" },
-  { id: "java", label: "Java\nJavaFX • Swing • Spring Boot" },
+  { id: "java", label: "Java\nSpring Boot • Swing • JavaFX" },
 
   { id: "scripting", label: "Scripting" },
   { id: "javascript", label: "JavaScript\nExpress • Node.js" },
   { id: "typescript", label: "TypeScript\nAngular" },
-  { id: "python", label: "Python\nPandas • Scikit-learn • PyTorch • FastAPI" },
+  { id: "python", label: "Python" },
+  { id: "ai", label: "Pandas • Scikit-learn • PyTorch" },
+  { id: "webpy", label: "Flask • FastAPI" },
 
   { id: "database", label: "Database" },
   { id: "postgresql", label: "PostgreSQL" },
@@ -60,6 +62,9 @@ const rawEdges = [
   ["scripting", "javascript"],
   ["scripting", "typescript"],
   ["scripting", "python"],
+
+  ["python", "ai"],
+  ["python", "webpy"],
 
   ["database", "postgresql"],
   ["database", "mysql"],
@@ -164,6 +169,8 @@ function getNodeStyle(nodeId: string) {
       "javascript",
       "typescript",
       "python",
+      "ai",
+      "webpy",
     ].includes(nodeId)
   ) {
     return {
