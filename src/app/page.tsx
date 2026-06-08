@@ -23,8 +23,7 @@ export default function Home() {
 
             <p className="mb-8 max-w-3xl text-2xl font-medium text-slate-200">
               Stagiaire Ingénieur Logiciel chez{" "}
-              <span className="text-cyan-300">Thales DMS</span> & Engineering
-              Etudiant à{" "}
+              <span className="text-cyan-300">Thales DMS</span> & Etudiant à{" "}
               <span className="text-cyan-300">Polytech Paris-Saclay</span>.
             </p>
 
