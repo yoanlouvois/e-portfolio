@@ -1,133 +1,216 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import "@xyflow/react/dist/style.css";
-import { ReactFlow, Background } from "@xyflow/react";
+import { ReactFlow, Background, Controls, type Node, type Edge } from "@xyflow/react";
 import dagre from "dagre";
 
-const nodeWidth = 180;
+const nodeWidth = 190;
 const nodeHeight = 60;
 
-const rawNodes = [
-  { id: "me", label: "Yoan Louvois" },
+type RawNode = { id: string; label: string; tier: 0 | 1 | 2 | 3 | 4 };
+type RawEdge = [string, string];
 
-  { id: "devops", label: "DevOps / MLOps" },
-  { id: "cicd", label: "CI/CD" },
-  { id: "github-actions", label: "GitHub Actions" },
-  { id: "container", label: "Conteneurisation" },
-  { id: "docker", label: "Docker" },
-  { id: "iac", label: "Infrastructure as Code" },
-  { id: "terraform", label: "Terraform" },
-  { id: "cloud", label: "Cloud" },
-  { id: "aws", label: "AWS\nEC2 • S3 • Lambda • VPC • Sagemaker AI" },
+type CategoryColor = {
+  root: { bg: string; border: string; text: string };
+  mid: { bg: string; border: string; text: string };
+  leaf: { bg: string; border: string; text: string };
+};
 
-  { id: "languages", label: "Langages" },
-  { id: "poo", label: "Programmation Orientée Objet" },
-  { id: "cpp", label: "C++\nQt • Multi-threading" },
-  { id: "java", label: "Java\nSpring Boot • Swing • JavaFX" },
+type Category = {
+  id: string;
+  label: string;
+  color: CategoryColor;
+  nodes: RawNode[];
+  edges: RawEdge[];
+};
 
-  { id: "scripting", label: "Scripting" },
-  { id: "javascript", label: "JavaScript\nExpress • Node.js" },
-  { id: "typescript", label: "TypeScript\nAngular" },
-  { id: "python", label: "Python" },
-  { id: "ai", label: "Pandas • Scikit-learn • PyTorch" },
-  { id: "webpy", label: "Flask • FastAPI" },
+// Le noeud "moi" est commun a tous les graphes
+const ME_NODE: RawNode = { id: "me", label: "Yoan Louvois", tier: 0 };
 
-  { id: "database", label: "Database" },
-  { id: "postgresql", label: "PostgreSQL" },
-  { id: "mysql", label: "MySQL" },
+const CATEGORIES: Category[] = [
+  {
+    id: "devops",
+    label: "DevOps / MLOps",
+    color: {
+      root: { bg: "#172554", border: "#3b82f6", text: "#bfdbfe" },
+      mid: { bg: "#1e3a8a", border: "#60a5fa", text: "#dbeafe" },
+      leaf: { bg: "#0f1e40", border: "#93c5fd", text: "#eff6ff" },
+    },
+    nodes: [
+      ME_NODE,
+      { id: "devops", label: "DevOps / MLOps", tier: 1 },
+
+      { id: "cicd", label: "CI/CD", tier: 2 },
+      { id: "github-actions", label: "GitHub Actions", tier: 3 },
+
+      { id: "container", label: "Conteneurisation", tier: 2 },
+      { id: "docker", label: "Docker", tier: 3 },
+
+      { id: "iac", label: "Infrastructure as Code", tier: 2 },
+      { id: "terraform", label: "Terraform", tier: 3 },
+      { id: "ansible", label: "Ansible", tier: 3 },
+
+      { id: "cloud", label: "Cloud", tier: 2 },
+      { id: "aws", label: "AWS", tier: 3 },
+      { id: "ec2", label: "EC2 / ECR", tier: 4 },
+      { id: "s3", label: "S3 / RDS", tier: 4 },
+      { id: "lambda", label: "Lambda", tier: 4 },
+      { id: "vpc", label: "IAM / VPC", tier: 4 },
+      { id: "sagemaker", label: "Sagemaker AI", tier: 4 },
+    ],
+    edges: [
+      ["me", "devops"],
+      ["devops", "cicd"],
+      ["cicd", "github-actions"],
+      ["devops", "container"],
+      ["container", "docker"],
+      ["devops", "iac"],
+      ["iac", "terraform"],
+      ["devops", "cloud"],
+      ["cloud", "aws"],
+      ["aws", "ec2"],
+      ["aws", "s3"],
+      ["aws", "lambda"],
+      ["aws", "vpc"],
+      ["aws", "sagemaker"],
+      ["iac", "ansible"],
+    ],
+  },
+  {
+    id: "langages",
+    label: "Langages",
+    color: {
+      root: { bg: "#3b0764", border: "#a855f7", text: "#e9d5ff" },
+      mid: { bg: "#4c1d95", border: "#c084fc", text: "#f3e8ff" },
+      leaf: { bg: "#2e1065", border: "#d8b4fe", text: "#faf5ff" },
+    },
+    nodes: [
+      ME_NODE,
+      { id: "languages", label: "Langages", tier: 1 },
+ 
+      { id: "poo", label: "Programmation Orientée Objet", tier: 2 },
+      { id: "cpp", label: "C++", tier: 3 },
+      { id: "cpp-qt", label: "Qt", tier: 4 },
+      { id: "cpp-thread", label: "Multi-threading", tier: 4 },
+      { id: "java", label: "Java", tier: 3 },
+      { id: "java-spring", label: "Spring Boot", tier: 4 },
+      { id: "java-swing", label: "Swing", tier: 4 },
+      { id: "java-fx", label: "JavaFX", tier: 4 },
+ 
+      { id: "scripting", label: "Scripting", tier: 2 },
+      { id: "javascript", label: "JavaScript", tier: 3 },
+      { id: "js-express", label: "Express", tier: 4 },
+      { id: "js-node", label: "Node.js", tier: 4 },
+      { id: "typescript", label: "TypeScript", tier: 3 },
+      { id: "ts-angular", label: "Angular", tier: 4 },
+      { id: "python", label: "Python", tier: 3 },
+    ],
+    edges: [
+      ["me", "languages"],
+      ["languages", "poo"],
+      ["poo", "cpp"],
+      ["cpp", "cpp-qt"],
+      ["cpp", "cpp-thread"],
+      ["poo", "java"],
+      ["java", "java-spring"],
+      ["java", "java-swing"],
+      ["java", "java-fx"],
+      ["languages", "scripting"],
+      ["scripting", "javascript"],
+      ["javascript", "js-express"],
+      ["javascript", "js-node"],
+      ["scripting", "typescript"],
+      ["typescript", "ts-angular"],
+      ["scripting", "python"],
+    ],
+  },
+  {
+    id: "ml",
+    label: "Python / Machine Learning",
+    color: {
+      root: { bg: "#022c22", border: "#10b981", text: "#6ee7b7" },
+      mid: { bg: "#064e3b", border: "#34d399", text: "#a7f3d0" },
+      leaf: { bg: "#01201a", border: "#6ee7b7", text: "#d1fae5" },
+    },
+    nodes: [
+      ME_NODE,
+      { id: "python", label: "Python", tier: 1 },
+ 
+      { id: "data-science", label: "Data Science / ML", tier: 2 },
+      { id: "pandas", label: "Pandas", tier: 3 },
+      { id: "scikit", label: "Scikit-learn", tier: 3 },
+ 
+      { id: "deep-learning", label: "Deep Learning", tier: 2 },
+      { id: "pytorch", label: "PyTorch", tier: 3 },
+      { id: "tensorflow", label: "TensorFlow", tier: 3 },
+ 
+      { id: "computer-vision", label: "Computer Vision", tier: 2 },
+      { id: "opencv", label: "OpenCV", tier: 3 },
+ 
+      { id: "genai", label: "IA Générative", tier: 2 },
+      { id: "langchain", label: "LangChain", tier: 3 },
+      { id: "langgraph", label: "LangGraph", tier: 3 },
+ 
+      { id: "web-python", label: "Web", tier: 2 },
+      { id: "flask", label: "Flask", tier: 3 },
+      { id: "fastapi", label: "FastAPI", tier: 3 },
+    ],
+    edges: [
+      ["me", "python"],
+      ["python", "data-science"],
+      ["data-science", "pandas"],
+      ["data-science", "scikit"],
+      ["python", "deep-learning"],
+      ["deep-learning", "pytorch"],
+      ["deep-learning", "tensorflow"],
+      ["python", "computer-vision"],
+      ["computer-vision", "opencv"],
+      ["python", "genai"],
+      ["genai", "langchain"],
+      ["genai", "langgraph"],
+      ["python", "web-python"],
+      ["web-python", "flask"],
+      ["web-python", "fastapi"],
+    ],
+  },
+  {
+    id: "database",
+    label: "Database",
+    color: {
+      root: { bg: "#0c4a6e", border: "#0ea5e9", text: "#bae6fd" },
+      mid: { bg: "#075985", border: "#38bdf8", text: "#e0f2fe" },
+      leaf: { bg: "#083344", border: "#7dd3fc", text: "#f0f9ff" },
+    },
+    nodes: [
+      ME_NODE,
+      { id: "database", label: "Database", tier: 1 },
+      { id: "postgresql", label: "PostgreSQL", tier: 2 },
+      { id: "mysql", label: "MySQL", tier: 2 },
+    ],
+    edges: [
+      ["me", "database"],
+      ["database", "postgresql"],
+      ["database", "mysql"],
+    ],
+  },
 ];
 
-const rawEdges = [
-  ["me", "devops"],
-  ["me", "languages"],
-  ["me", "database"],
-
-  ["devops", "cicd"],
-  ["cicd", "github-actions"],
-
-  ["devops", "container"],
-  ["container", "docker"],
-
-  ["devops", "iac"],
-  ["iac", "terraform"],
-
-  ["devops", "cloud"],
-  ["cloud", "aws"],
-
-  ["languages", "poo"],
-  ["poo", "cpp"],
-  ["poo", "java"],
-
-  ["languages", "scripting"],
-  ["scripting", "javascript"],
-  ["scripting", "typescript"],
-  ["scripting", "python"],
-
-  ["python", "ai"],
-  ["python", "webpy"],
-
-  ["database", "postgresql"],
-  ["database", "mysql"],
-];
-
-function getLayoutedElements() {
-  const dagreGraph = new dagre.graphlib.Graph();
-
-  dagreGraph.setDefaultEdgeLabel(() => ({}));
-
-  dagreGraph.setGraph({
-    rankdir: "TB", // Passe de "TB" à "LR" (Left to Right)
-    ranksep: 60,   // Réduit de 100 à 60
-    nodesep: 20,   // Réduit de 50 à 20
-  });
-
-  rawNodes.forEach((node) => {
-    dagreGraph.setNode(node.id, {
-      width: nodeWidth,
-      height: nodeHeight,
-    });
-  });
-
-  rawEdges.forEach(([source, target]) => {
-    dagreGraph.setEdge(source, target);
-  });
-
-  dagre.layout(dagreGraph);
-
-  const nodes = rawNodes.map((node) => {
-    const pos = dagreGraph.node(node.id);
-
-    return {
-      id: node.id,
-      data: { label: node.label },
-      position: {
-        x: pos.x - nodeWidth / 2,
-        y: pos.y - nodeHeight / 2,
-      },
-      style: getNodeStyle(node.id),
-    };
-  });
-
-  const edges = rawEdges.map(([source, target]) => ({
-    id: `${source}-${target}`,
-    source,
-    target,
-    animated: true,
-  }));
-
-  return { nodes, edges };
-}
-
-function getNodeStyle(nodeId: string) {
+function getNodeStyle(node: RawNode, color: CategoryColor) {
   const baseStyle = {
     borderRadius: 12,
     padding: 10,
-    whiteSpace: "pre-line",
+    whiteSpace: "pre-line" as const,
     width: nodeWidth,
     minHeight: nodeHeight,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center" as const,
+    fontSize: 13,
   };
 
-  if (nodeId === "me") {
+  if (node.tier === 0) {
     return {
       ...baseStyle,
       background: "#082f49",
@@ -138,86 +221,129 @@ function getNodeStyle(nodeId: string) {
     };
   }
 
-  if (
-    [
-      "devops",
-      "cicd",
-      "github-actions",
-      "container",
-      "docker",
-      "iac",
-      "terraform",
-      "cloud",
-      "aws",
-    ].includes(nodeId)
-  ) {
+  if (node.tier === 1) {
     return {
       ...baseStyle,
-      background: "#172554",
-      color: "#bfdbfe",
-      border: "1px solid #3b82f6",
+      background: color.root.bg,
+      color: color.root.text,
+      border: `2px solid ${color.root.border}`,
+      fontWeight: 600,
     };
   }
 
-  if (
-    [
-      "languages",
-      "poo",
-      "cpp",
-      "java",
-      "scripting",
-      "javascript",
-      "typescript",
-      "python",
-      "ai",
-      "webpy",
-    ].includes(nodeId)
-  ) {
+  if (node.tier === 2) {
     return {
       ...baseStyle,
-      background: "#3b0764",
-      color: "#e9d5ff",
-      border: "1px solid #a855f7",
-    };
-  }
-
-  if (["database", "postgresql", "mysql"].includes(nodeId)) {
-    return {
-      ...baseStyle,
-      background: "#172554",
-      color: "#bfdbfe",
-      border: "1px solid #3b82f6",
+      background: color.mid.bg,
+      color: color.mid.text,
+      border: `1px solid ${color.mid.border}`,
+      fontWeight: 500,
     };
   }
 
   return {
     ...baseStyle,
-    background: "#0f172a",
-    color: "#e2e8f0",
-    border: "1px solid #475569",
+    background: color.leaf.bg,
+    color: color.leaf.text,
+    border: `1px solid ${color.leaf.border}`,
+    fontWeight: 400,
   };
 }
 
-export default function PortfolioFlow() {
-  const { nodes, edges } = getLayoutedElements();
+function getLayoutedElements(category: Category): { nodes: Node[]; edges: Edge[] } {
+  const dagreGraph = new dagre.graphlib.Graph();
+  dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-  return(
-    <div className="h-full w-full rounded-2xl bg-slate-950">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        fitView
-        fitViewOptions={{
-          padding: 0.4,
-          minZoom: 0.54,
-          maxZoom: 0.9,
-        }}
-        minZoom={0.2}
-        maxZoom={1.5}
-        defaultViewport={{ x: 0, y: 0, zoom: 0.45 }}
-      >
-        <Background color="#164e63" gap={24} />
-      </ReactFlow>
+  dagreGraph.setGraph({
+    rankdir: "LR",
+    ranksep: 110,
+    nodesep: 45,
+  });
+
+  category.nodes.forEach((node) => {
+    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
+  });
+
+  category.edges.forEach(([source, target]) => {
+    dagreGraph.setEdge(source, target);
+  });
+
+  dagre.layout(dagreGraph);
+
+  const nodes: Node[] = category.nodes.map((node) => {
+    const pos = dagreGraph.node(node.id);
+    return {
+      id: node.id,
+      data: { label: node.label },
+      position: {
+        x: pos.x - nodeWidth / 2,
+        y: pos.y - nodeHeight / 2,
+      },
+      style: getNodeStyle(node, category.color),
+    };
+  });
+
+  const edges: Edge[] = category.edges.map(([source, target]) => ({
+    id: `${category.id}-${source}-${target}`,
+    source,
+    target,
+    animated: true,
+    style: { stroke: category.color.mid.border, strokeWidth: 1.5 },
+  }));
+
+  return { nodes, edges };
+}
+
+export default function PortfolioFlow() {
+  const [activeCategoryId, setActiveCategoryId] = useState(CATEGORIES[0].id);
+
+  const activeCategory = useMemo(
+    () => CATEGORIES.find((c) => c.id === activeCategoryId) ?? CATEGORIES[0],
+    [activeCategoryId]
+  );
+
+  const { nodes, edges } = useMemo(
+    () => getLayoutedElements(activeCategory),
+    [activeCategory]
+  );
+
+  return (
+    <div className="flex h-full w-full flex-col gap-3 rounded-2xl bg-slate-950 p-3">
+      {/* Selecteur de categories */}
+      <div className="flex flex-wrap gap-2">
+        {CATEGORIES.map((category) => {
+          const isActive = category.id === activeCategoryId;
+          return (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategoryId(category.id)}
+              className="skill-filter-btn rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200"
+              style={{
+                background: isActive ? category.color.root.bg : "transparent",
+                color: isActive ? category.color.root.text : "#64748b",
+                border: `1px solid ${isActive ? category.color.root.border : "#334155"}`,
+              }}
+            >
+              {category.label}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Graphe */}
+      <div className="min-h-0 flex-1 overflow-hidden rounded-2xl border border-slate-800">
+        <ReactFlow
+          key={activeCategory.id}
+          nodes={nodes}
+          edges={edges}
+          fitView
+          fitViewOptions={{ padding: 0.3, minZoom: 0.4, maxZoom: 1 }}
+          minZoom={0.2}
+          maxZoom={1.5}
+        >
+          <Background color="#164e63" gap={24} />
+        </ReactFlow>
+      </div>
     </div>
   );
 }
