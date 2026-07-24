@@ -21,7 +21,7 @@ const projects = [
     title: "GameTracker",
     image: "/projects/gametracker.png",
     github: "https://github.com/yoanlouvois/GameTrackerProject-Backend",
-    tags: ["Java", "Spring Boot", "TypeScript", "Angular", "Docker", "MySQL"],
+    tags: ["Java", "Spring Boot", "TypeScript", "Angular", "Docker", "MySQL", "AWS", "Terraform"],
     description:
       "Application web full-stack dédiée à une plateforme de gaming (gestion des joueurs, trophées, amis et statistiques), conçue avec Spring Boot, Docker, MySQL et Angular.",
   },
