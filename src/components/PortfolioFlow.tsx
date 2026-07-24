@@ -23,6 +23,7 @@ type Category = {
   color: CategoryColor;
   nodes: RawNode[];
   edges: RawEdge[];
+  direction?: "LR" | "TB";
 };
 
 // Le noeud "moi" est commun a tous les graphes
@@ -80,6 +81,7 @@ const CATEGORIES: Category[] = [
   {
     id: "langages",
     label: "Langages",
+    direction: "TB",
     color: {
       root: { bg: "#3b0764", border: "#a855f7", text: "#e9d5ff" },
       mid: { bg: "#4c1d95", border: "#c084fc", text: "#f3e8ff" },
@@ -128,6 +130,7 @@ const CATEGORIES: Category[] = [
   {
     id: "ml",
     label: "Python / Machine Learning",
+    direction: "TB",
     color: {
       root: { bg: "#022c22", border: "#10b981", text: "#6ee7b7" },
       mid: { bg: "#064e3b", border: "#34d399", text: "#a7f3d0" },
@@ -255,7 +258,7 @@ function getLayoutedElements(category: Category): { nodes: Node[]; edges: Edge[]
   dagreGraph.setDefaultEdgeLabel(() => ({}));
 
   dagreGraph.setGraph({
-    rankdir: "LR",
+    rankdir: category.direction ?? "LR",
     ranksep: 110,
     nodesep: 45,
   });
