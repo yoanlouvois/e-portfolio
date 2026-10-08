@@ -10,12 +10,12 @@ const projects = [
       "Conception d'une infrastructure MLOps de bout en bout via Terraform sur AWS. Déploiement serverless (API Gateway & Lambda) et conteneurisé (Docker/ECR) d'un modèle SageMaker de segmentation d'images satellites.",
   },
   {
-    title: "Unsupervised-ML-Fruits-Classification",
-    image: "/projects/fruitsml-classification.png",
-    github: "https://github.com/yoanlouvois/Unsupervised-ML-Fruits-Classification",
-    tags: ["Python", "Scikit-learn", "Streamlit", "Computer Vision", "Resnet50"],
+    title: "Site-Monitor-K8s",
+    image: "/projects/site-monitor.png",
+    github: "https://github.com/yoanlouvois/site-monitor-k8s",
+    tags: ["Kubernetes", "GCP", "Terraform", "Docker", "FastAPI", "Redis", "Prometheus"],
     description:
-      "Comparaison de méthodes d'extraction de caractéristiques et d'algorithmes de clustering appliqués à des images de fruits, avec une interface de visualisation interactive sous Streamlit.",
+      "Moniteur de disponibilité de sites web en microservices, déployé sur un cluster Kubernetes (kubeadm) provisionné avec Terraform sur GCP. Sécurité durcie (NetworkPolicies, Pod Security Standards, RBAC), autoscaling HPA, observabilité Prometheus/Grafana et alertes Discord.",
   },
   {
     title: "GameTracker",
@@ -23,7 +23,7 @@ const projects = [
     github: "https://github.com/yoanlouvois/game-tracker-project-backend",
     tags: ["Java", "Spring Boot", "TypeScript", "Angular", "Docker", "MySQL", "AWS", "Terraform"],
     description:
-      "Application web full-stack dédiée à une plateforme de gaming (gestion des joueurs, trophées, amis et statistiques), conçue avec Spring Boot, Docker, MySQL et Angular.",
+      "Application web full-stack de jeux en ligne (jeux, trophées, amis, statistiques) développée avec Spring Boot, Angular et MySQL, conteneurisée avec Docker et déployée sur AWS via Terraform dans une architecture multi-AZ.",
   },
   {
     title: "Travel-Tracker-App",
@@ -42,12 +42,12 @@ const projects = [
       "Labyrinthe 3D généré de manière procédurale dans lequel l'utilisateur peut naviguer en temps réel. Focus sur le rendu graphique, la génération et la gestion des déplacements.",
   },
   {
-    title: "CMDominion",
-    image: "/projects/cmdominion.png",
-    github: "https://github.com/yoanlouvois/CMDominion",
-    tags: ["C++", "CLI", "POO", "Makefile"],
+    title: "Unsupervised-ML-Fruits-Classification",
+    image: "/projects/fruitsml-classification.png",
+    github: "https://github.com/yoanlouvois/Unsupervised-ML-Fruits-Classification",
+    tags: ["Python", "Scikit-learn", "Streamlit", "Computer Vision", "Resnet50"],
     description:
-      "Jeu de société Dominion jouable en ligne de commande (CLI) développé en C++. Supporte le multijoueur local (2 à 4 joueurs), intègre les mécaniques complètes de deck-building et inclut un Makefile.",
+      "Comparaison de méthodes d'extraction de caractéristiques et d'algorithmes de clustering appliqués à des images de fruits, avec une interface de visualisation interactive sous Streamlit.",
   }
 ];
 
