@@ -60,7 +60,7 @@ export default function ProjectsSection() {
         </p>
 
         <h2 className="text-4xl font-bold tracking-tight">
-          Projets Sélectionnés
+          Quelques projets
         </h2>
       </div>
 
