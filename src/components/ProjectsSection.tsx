@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: "GameTracker",
-    image: "/projects/gametracker.png",
+    image: "/projects/game-tracker.png",
     github: "https://github.com/yoanlouvois/game-tracker-project-backend",
     tags: ["Java", "Spring Boot", "TypeScript", "Angular", "Docker", "MySQL", "AWS", "Terraform"],
     description:
