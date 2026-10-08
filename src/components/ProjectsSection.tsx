@@ -4,7 +4,7 @@ const projects = [
   {
     title: "Urban-Green-Score-MLops",
     image: "/projects/urban-green-score.png",
-    github: "https://github.com/yoanlouvois/Urban-Green-Score-MLops",
+    github: "https://github.com/yoanlouvois/urban-green-score-mlops",
     tags: ["Python", "PyTorch", "AWS", "Terraform", "Docker", "MLOps"],
     description:
       "Conception d'une infrastructure MLOps de bout en bout via Terraform sur AWS. Déploiement serverless (API Gateway & Lambda) et conteneurisé (Docker/ECR) d'un modèle SageMaker de segmentation d'images satellites.",
@@ -20,7 +20,7 @@ const projects = [
   {
     title: "GameTracker",
     image: "/projects/gametracker.png",
-    github: "https://github.com/yoanlouvois/GameTrackerProject-Backend",
+    github: "https://github.com/yoanlouvois/game-tracker-project-backend",
     tags: ["Java", "Spring Boot", "TypeScript", "Angular", "Docker", "MySQL", "AWS", "Terraform"],
     description:
       "Application web full-stack dédiée à une plateforme de gaming (gestion des joueurs, trophées, amis et statistiques), conçue avec Spring Boot, Docker, MySQL et Angular.",
@@ -28,7 +28,7 @@ const projects = [
   {
     title: "Travel-Tracker-App",
     image: "/projects/travel-tracker.png",
-    github: "https://github.com/yoanlouvois/Travel-Tracker-App",
+    github: "https://github.com/yoanlouvois/travel-tracker-app",
     tags: ["Javascript","Node.js", "Express", "Prisma", "Leaflet"],
     description:
       "Application web développée avec Node.js, Express, Prisma et Leaflet permettant de consigner, d'organiser et de visualiser ses voyages personnels sur une carte interactive.",
@@ -36,7 +36,7 @@ const projects = [
   {
     title: "3D-Maze-Environment-OpenGL",
     image: "/projects/maze-opengl.png",
-    github: "https://github.com/yoanlouvois/3D-Maze-Environment-OpenGL",
+    github: "https://github.com/yoanlouvois/3d-maze-environment-opengl",
     tags: ["C++", "OpenGL", "3D", "Procedural Generation"],
     description:
       "Labyrinthe 3D généré de manière procédurale dans lequel l'utilisateur peut naviguer en temps réel. Focus sur le rendu graphique, la génération et la gestion des déplacements.",
