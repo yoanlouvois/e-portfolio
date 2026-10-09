@@ -68,7 +68,7 @@ export default function Home() {
               className="group mt-8 inline-flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/5 py-3 pl-3 pr-6 backdrop-blur-sm transition-colors hover:border-cyan-400/50"
             >
               <img
-                src="/projects/AWS_SAA.png"
+                src="/e-portfolio/projects/AWS_SAA.png"
                 alt="Badge AWS Certified Solutions Architect – Associate"
                 width={56}
                 height={56}
