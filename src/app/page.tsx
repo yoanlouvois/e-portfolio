@@ -22,27 +22,35 @@ export default function Home() {
             </h1>
 
             <p className="mb-8 max-w-3xl text-2xl font-medium text-slate-200">
-              Stagiaire Ingénieur Logiciel chez{" "}
-              <span className="text-cyan-300">Thales DMS</span> & Etudiant à{" "}
-              <span className="text-cyan-300">Polytech Paris-Saclay</span>.
+              A la recherche d'un CDI en {" "}
+                <span className="text-cyan-300">DevOps, Cloud ou MLOps</span>.
             </p>
 
             <p className="max-w-3xl text-lg leading-relaxed text-slate-400">
-              Je suis un étudiant ingénieur en informatique axé sur le développement 
-              backend, les infrastructures cloud et les systèmes prêts pour la production. 
-              Je m'intéresse particulièrement au DevOps et au MLOps : conception de solutions 
-              cloud sur AWS, automatisation de workflows et développement de pipelines de 
-              machine learning fiables.
+              Ingénieur diplômé de{" "}
+              <span className="text-cyan-300">Polytech Paris-Saclay</span> (2026) en
+              Informatique et Ingénierie Mathématiques, je suis certifié{" "}
+              <a
+                href="https://www.credly.com/badges/ef5b0ac1-3f3d-4744-bdbf-df487b701248/public_url"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-300 decoration-cyan-400/40 underline-offset-4 transition-colors hover:text-cyan-200 hover:decoration-cyan-300"
+              >
+                AWS Solutions Architect – Associate
+              </a>{" "}
+              (SAA-C03). Je m'intéresse au DevOps, au MLOps, au Cloud Engineering et à l'ingénierie
+              logicielle en général, avec un intérêt particulier pour le Deep Learning et le
+              déploiement de modèles dans des environnements réels. J'aime concevoir des
+              infrastructures robustes, automatiser les workflows et faire passer les applications
+              à l'échelle.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
               {[
-                "Backend",
                 "DevOps",
+                "Cloud",
                 "MLOps",
-                "AWS",
-                "Cloud Engineering",
-                "ML Automation",
+                "Software Engineering",
               ].map((tech) => (
                 <span
                   key={tech}
@@ -52,6 +60,30 @@ export default function Home() {
                 </span>
               ))}
             </div>
+
+                        <a
+              href="https://www.credly.com/badges/ef5b0ac1-3f3d-4744-bdbf-df487b701248/public_url"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-8 inline-flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/5 py-3 pl-3 pr-6 backdrop-blur-sm transition-colors hover:border-cyan-400/50"
+            >
+              <img
+                src="/projects/AWS_SAA.png"
+                alt="Badge AWS Certified Solutions Architect – Associate"
+                width={56}
+                height={56}
+                className="h-14 w-14"
+              />
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400">
+                  Certification
+                </p>
+                <p className="font-medium text-slate-200 transition-colors group-hover:text-cyan-300">
+                  AWS Solutions Architect – Associate
+                </p>
+                <p className="text-sm text-slate-500">SAA-C03 · Vérifier sur Credly ↗</p>
+              </div>
+            </a>
           </section>
 
           {/* SKILLS */}

@@ -13,7 +13,7 @@ const projects = [
     title: "Site-Monitor-K8s",
     image: "/projects/site-monitor.png",
     github: "https://github.com/yoanlouvois/site-monitor-k8s",
-    tags: ["Kubernetes", "GCP", "Terraform", "Docker", "FastAPI", "Redis", "Prometheus"],
+    tags: ["Kubernetes", "GCP", "Terraform", "Docker", "FastAPI", "Redis", "Prometheus", "Grafana"],
     description:
       "Moniteur de disponibilité de sites web en microservices, déployé sur un cluster Kubernetes (kubeadm) provisionné avec Terraform sur GCP. Sécurité durcie (NetworkPolicies, Pod Security Standards, RBAC), autoscaling HPA, observabilité Prometheus/Grafana et alertes Discord.",
   },

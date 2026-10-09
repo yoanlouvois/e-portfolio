@@ -32,33 +32,38 @@ const ME_NODE: RawNode = { id: "me", label: "Yoan Louvois", tier: 0 };
 const CATEGORIES: Category[] = [
   {
     id: "devops",
-    label: "DevOps / MLOps",
+    label: "DevOps / Cloud",
+    direction: "TB",
     color: {
       root: { bg: "#172554", border: "#3b82f6", text: "#bfdbfe" },
       mid: { bg: "#1e3a8a", border: "#60a5fa", text: "#dbeafe" },
       leaf: { bg: "#0f1e40", border: "#93c5fd", text: "#eff6ff" },
     },
-    nodes: [
+        nodes: [
       ME_NODE,
-      { id: "devops", label: "DevOps / MLOps", tier: 1 },
+      { id: "devops", label: "DevOps • Cloud • MLOps", tier: 1 },
 
       { id: "cicd", label: "CI/CD", tier: 2 },
       { id: "github-actions", label: "GitHub Actions", tier: 3 },
 
-      { id: "container", label: "Conteneurisation", tier: 2 },
+      { id: "container", label: "Conteneurs & Orchestration", tier: 2 },
       { id: "docker", label: "Docker", tier: 3 },
+      { id: "kubernetes", label: "Kubernetes", tier: 3 },
+      { id: "k8s_tools", label: "kubeadm • Kustomize • Helm • HPA", tier: 4 },
 
       { id: "iac", label: "Infrastructure as Code", tier: 2 },
       { id: "terraform", label: "Terraform", tier: 3 },
       { id: "ansible", label: "Ansible", tier: 3 },
 
+      { id: "observability", label: "Observabilité", tier: 2 },
+      { id: "prometheus", label: "Prometheus", tier: 3 },
+      { id: "grafana", label: "Grafana", tier: 3 },
+
       { id: "cloud", label: "Cloud", tier: 2 },
       { id: "aws", label: "AWS", tier: 3 },
-      { id: "ec2", label: "EC2 / ECR", tier: 4 },
-      { id: "s3", label: "S3 / RDS", tier: 4 },
-      { id: "lambda", label: "Lambda", tier: 4 },
-      { id: "vpc", label: "IAM / VPC", tier: 4 },
-      { id: "sagemaker", label: "Sagemaker AI", tier: 4 },
+      { id: "gcp", label: "GCP", tier: 3 },
+      { id: "aws_services", label: "EC2 • S3 • Lambda • VPC • SageMaker", tier: 4 },
+      { id: "gcp_services", label: "GCE • VPC • Load Balancing • IAP", tier: 4 },
     ],
     edges: [
       ["me", "devops"],
@@ -66,16 +71,19 @@ const CATEGORIES: Category[] = [
       ["cicd", "github-actions"],
       ["devops", "container"],
       ["container", "docker"],
+      ["container", "kubernetes"],
+      ["kubernetes", "k8s_tools"],
       ["devops", "iac"],
       ["iac", "terraform"],
+      ["iac", "ansible"],
+      ["devops", "observability"],
+      ["observability", "prometheus"],
+      ["observability", "grafana"],
       ["devops", "cloud"],
       ["cloud", "aws"],
-      ["aws", "ec2"],
-      ["aws", "s3"],
-      ["aws", "lambda"],
-      ["aws", "vpc"],
-      ["aws", "sagemaker"],
-      ["iac", "ansible"],
+      ["cloud", "gcp"],
+      ["aws", "aws_services"],
+      ["gcp", "gcp_services"],
     ],
   },
   {
@@ -107,6 +115,8 @@ const CATEGORIES: Category[] = [
       { id: "typescript", label: "TypeScript", tier: 3 },
       { id: "ts-angular", label: "Angular", tier: 4 },
       { id: "python", label: "Python", tier: 3 },
+      { id: "fast-api", label: "FastAPI", tier: 4 },
+      { id: "flask", label: "Flask", tier: 4 },
     ],
     edges: [
       ["me", "languages"],
@@ -125,6 +135,8 @@ const CATEGORIES: Category[] = [
       ["scripting", "typescript"],
       ["typescript", "ts-angular"],
       ["scripting", "python"],
+      ["python", "fast-api"],
+      ["python", "flask"],
     ],
   },
   {
