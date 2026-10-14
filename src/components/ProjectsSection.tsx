@@ -2,14 +2,6 @@ const basePath = process.env.NODE_ENV === "production" ? "/e-portfolio" : "";
 
 const projects = [
   {
-    title: "Urban-Green-Score-MLops",
-    image: "/projects/urban-green-score.png",
-    github: "https://github.com/yoanlouvois/urban-green-score-mlops",
-    tags: ["Python", "PyTorch", "AWS", "Terraform", "Docker", "MLOps"],
-    description:
-      "Conception d'une infrastructure MLOps de bout en bout via Terraform sur AWS. Déploiement serverless (API Gateway & Lambda) et conteneurisé (Docker/ECR) d'un modèle SageMaker de segmentation d'images satellites.",
-  },
-  {
     title: "Site-Monitor-K8s",
     image: "/projects/site-monitor.png",
     github: "https://github.com/yoanlouvois/site-monitor-k8s",
@@ -20,10 +12,18 @@ const projects = [
   {
     title: "GameTracker",
     image: "/projects/game-tracker.png",
-    github: "https://github.com/yoanlouvois/game-tracker-project-backend",
+    github: "https://github.com/yoanlouvois/game-tracker-project-infra",
     tags: ["Java", "Spring Boot", "TypeScript", "Angular", "Docker", "MySQL", "AWS", "Terraform"],
     description:
       "Application web full-stack de jeux en ligne (jeux, trophées, amis, statistiques) développée avec Spring Boot, Angular et MySQL, conteneurisée avec Docker et déployée sur AWS via Terraform dans une architecture multi-AZ.",
+  },
+  {
+    title: "Urban-Green-Score-MLops",
+    image: "/projects/urban-green-score-mlops.png",
+    github: "https://github.com/yoanlouvois/urban-green-score-mlops",
+    tags: ["Python", "PyTorch", "AWS", "Terraform", "Docker", "MLOps"],
+    description:
+      "Conception d'une infrastructure MLOps de bout en bout via Terraform sur AWS. Développement d'un modèle U-Net (PyTorch) de segmentation d'images satellites, entraîné sur SageMaker puis déployé en serverless (API Gateway & Lambda) et conteneurisé (Docker/ECR).",
   },
   {
     title: "Travel-Tracker-App",
