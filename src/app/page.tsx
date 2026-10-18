@@ -139,7 +139,7 @@ export default function Home() {
                 </div>
 
                 <p className="text-slate-400">
-                  Conception d'une interface d'interaction IA pour simulateur : développement d'API, d'outils d'orchestration, intégration de LLM locaux et distants, gestion de sessions conversationnelles et génération automatisée de scénarios.
+                  Intégration de LLM dans un simulateur tactique : conception d'une architecture de communication temps réel (WebSocket, serveur Python asynchrone) entre le simulateur et un agent IA, avec gestion des erreurs et des délais. Développement des API de pilotage et d'outils d'orchestration, déploiement d'un serveur d'inférence local sur GPU (FastAPI, llama.cpp) en environnement hors ligne contraint, intégration de LLM locaux et distants, gestion de sessions conversationnelles et génération automatisée de scénarios.
                 </p>
               </article>
 
