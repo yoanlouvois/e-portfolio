@@ -29,9 +29,9 @@ const projects = [
     title: "Travel-Tracker-App",
     image: "/projects/travel-tracker.png",
     github: "https://github.com/yoanlouvois/travel-tracker-app",
-    tags: ["Javascript","Node.js", "Express", "Prisma", "Leaflet"],
+    tags: ["Node.js", "Express", "Prisma", "SQLite", "Leaflet", "Electron", "GitHub Actions"],
     description:
-      "Application web développée avec Node.js, Express, Prisma et Leaflet permettant de consigner, d'organiser et de visualiser ses voyages personnels sur une carte interactive.",
+      "Application de bureau pour consigner, organiser et visualiser ses voyages sur une carte interactive : pays visités, lieux, roadtrips, photos et vlogs. Back-end Node.js, Express et Prisma (SQLite), packagé en application Windows avec Electron. Un pipeline CI/CD GitHub Actions construit l'installateur et publie automatiquement une release à chaque tag de version.",
   },
   {
     title: "3D-Maze-Environment-OpenGL",
